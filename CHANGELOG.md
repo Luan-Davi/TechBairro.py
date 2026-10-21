@@ -53,3 +53,7 @@
 
 ## Antes da v2.0 (Aulas 5 a 10)
 - Janela de cadastro com Tkinter, eventos dos botões e validação dos campos.
+
+Histórico do código
+O projeto usa Git. Para ver o histórico, rode na pasta do projeto:
+git log --oneline
