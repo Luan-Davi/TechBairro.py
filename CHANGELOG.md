@@ -1,5 +1,9 @@
 # Changelog da TechBairro
 
+## Em desenvolvimento
+### Adicionado
+- Código publicado no GitHub, com histórico de versões.
+
 ## v3.3.0 ()
 ### Corrigido
 - A lista da consulta é atualizada depois de excluir um cliente.
