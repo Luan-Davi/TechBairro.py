@@ -54,6 +54,7 @@ class ValidadorCliente:
         
         # RF01: lista com os campos vazios, com o nome que aparece na tela
         vazios = []
+    
         if cliente.nome == "":
             vazios.append("Nome")
         if cliente.telefone == "":
@@ -62,8 +63,7 @@ class ValidadorCliente:
             vazios.append("E-mail")
         if cliente.endereco == "":
             vazios.append("Endereço")
-        vazios.append("Nome")
-
+        
         if vazios:
             return f"Preencha o(s) campo(s): {', '.join(vazios)}"
 
