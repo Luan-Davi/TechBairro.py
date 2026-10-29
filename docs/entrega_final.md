@@ -21,7 +21,7 @@ Porque o banco guarda os dados dos clientes, que podem ser pessoais, e não deve
 Nenhum
 
 **Pergunta 3: se o voluntário tiver só o link do repositório, como ele instala e executa?**
-Ele abre o repositório, baixa o .zip da release (ou clona o projeto), extrai a pasta e instala o que está no requirements.txt. Depois abre o terminal na pasta e roda `python techbairro.py`. O passo a passo completo está no README e no manual de uso.
+Está o tutorial passo a passo no README
 
 ## Autoavaliação
 Acho que o vídeo ficou bom porque mostrei o sistema funcionando de verdade e expliquei com a minha voz. Eu mudaria o ritmo, falando mais devagar, e ensaiaria mais pra não estourar o tempo. O mais importante que aprendi nesta unidade foi que um sistema só está pronto quando está testado, documentado e versionado, não só quando roda no meu computador.
