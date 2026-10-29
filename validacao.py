@@ -73,9 +73,8 @@ class ValidadorCliente:
             return "Telefone inválido: use somente números."
 
         # RF03: o e-mail precisa estar no formato nome@dominio.com
-        if not self.email_parece_valido(cliente.email):
+        if not email_parece_valido(cliente.email):
             return "E-mail inválido: use o formato nome@dominio.com"
-
         # Nenhum problema encontrado
         return None
 

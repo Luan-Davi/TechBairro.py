@@ -3,6 +3,12 @@
 # ============================================================
 # Cada linha é um padrão de arquivo ou pasta
 # que o Git deve ignorar (não entra no histórico).
+
+# Ambiente virtual do Python
+.venv/
+venv/
+.venv
+
 # Banco de dados com os dados pessoais dos clientes (LGPD)
 *.db
 # Pasta que o Python gera sozinho ao importar os módulos
