@@ -12,8 +12,16 @@ Por que esse número de versão: Por causa que o 3.3.1 era o sistema inteiro fun
 | 7 | README, manual de uso e requirements.txt estão no repositório | Sim | https://github.com/Luan-Davi/TechBairro.py
 | 8 | A Issue "Teste do README" (Aula 26) está fechada | Sim | https://github.com/Luan-Davi/TechBairro.py/issues/1
 | 9 | O vídeo está publicado e o link abre sem pedir login | Sim (https://drive.google.com/file/d/1Lj1Uy5EE-uvRJsnA12EvdDwfob5zbkAj/view?usp=sharing) |
-## Roteiro do vídeo
 
 ## Perguntas
+**Pergunta 1: por que o arquivo techbairro.db não está no GitHub?**
+Porque o banco guarda os dados dos clientes, que podem ser pessoais, e não devem ficar públicos. Além disso, cada pessoa que instala o programa cria o seu próprio banco vazio. Por isso ele está no .gitignore.
+
+**Pergunta 2: qual caso de teste pegou um defeito de verdade? Qual era o defeito?**
+O teste do telefone com espaços (CT03, "61 9999 0000") e o do e-mail sem ponto (CT04) pegaram falhas na validação, porque o programa aceitava dados num formato que não deveria. Depois de corrigir, o sistema passou a limpar os espaços do telefone e a recusar e-mail inválido.
+
+**Pergunta 3: se o voluntário tiver só o link do repositório, como ele instala e executa?**
+Ele abre o repositório, baixa o .zip da release (ou clona o projeto), extrai a pasta e instala o que está no requirements.txt. Depois abre o terminal na pasta e roda `python techbairro.py`. O passo a passo completo está no README e no manual de uso.
 
 ## Autoavaliação
+Acho que o vídeo ficou bom porque mostrei o sistema funcionando de verdade e expliquei com a minha voz. Eu mudaria o ritmo, falando mais devagar, e ensaiaria mais pra não estourar o tempo. O mais importante que aprendi nesta unidade foi que um sistema só está pronto quando está testado, documentado e versionado, não só quando roda no meu computador.
