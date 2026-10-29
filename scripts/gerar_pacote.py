@@ -1,3 +1,4 @@
+
 # ============================================================
 # GERAR PACOTE DA VERSÃO (Aula 18)
 # ============================================================
@@ -5,41 +6,50 @@
 # Monta o arquivo .zip da versão que será publicada,
 # deixando de fora o que NÃO deve ser distribuído.
 
-# Importa o módulo os, para montar caminhos e percorrer pastas
 import os
-
-# Importa o módulo zipfile, para criar o arquivo .zip
-# (os dois já vêm com o Python)
 import zipfile
-
 
 # ============================================================
 # CONFIGURAÇÃO DO PACOTE
 # ============================================================
 
 # Este script fica na pasta scripts/;
-# o projeto é a pasta de cima (igual aos outros scripts)
+# o projeto é a pasta de cima.
 PASTA_DOS_SCRIPTS = os.path.dirname(os.path.abspath(__file__))
 PASTA_DO_PROJETO = os.path.dirname(PASTA_DOS_SCRIPTS)
 
-# Versão que será publicada
-# (tem que ser a MESMA da constante VERSAO do techbairro.py)
-VERSAO = "3.3.2"   # COMPLETE: a mesma versão do techbairro.py
+# Versão igual à constante VERSAO do techbairro.py
+VERSAO = "3.3.2"
 
 # Pastas que NÃO entram no pacote
-PASTAS_FORA = [".git", "__pycache__"]   # COMPLETE: duas pastas
+PASTAS_FORA = [
+    ".git",
+    ".venv",
+    "venv",
+    "__pycache__",
+    "dist",
+]
 
 # Tipos de arquivo que NÃO entram no pacote
-EXTENSOES_FORA = [".md", ".db"]   # COMPLETE: dois tipos de arquivo
+EXTENSOES_FORA = [
+    ".md",
+    ".db",
+    ".pyc",
+    ".pyo",
+]
+
+# Arquivos específicos que NÃO entram no pacote
+ARQUIVOS_FORA = [
+    ".gitignore",
+]
 
 # O pacote é salvo na pasta dist/ do projeto
 PASTA_DIST = os.path.join(PASTA_DO_PROJETO, "dist")
 os.makedirs(PASTA_DIST, exist_ok=True)
 
-# O nome do pacote leva a versão
+# Nome e caminho do pacote
 NOME_PACOTE = f"TechBairro-{VERSAO}"
 CAMINHO_PACOTE = os.path.join(PASTA_DIST, NOME_PACOTE + ".zip")
-
 
 # ============================================================
 # MONTAGEM DO PACOTE
@@ -51,41 +61,43 @@ print()
 incluidos = 0
 deixados_de_fora = 0
 
-# Abre o .zip para escrita (ZIP_DEFLATED = compactado)
-with zipfile.ZipFile(CAMINHO_PACOTE, "w", zipfile.ZIP_DEFLATED) as pacote:
+# Abre o ZIP para escrita
+with zipfile.ZipFile(
+    CAMINHO_PACOTE, "w", zipfile.ZIP_DEFLATED
+) as pacote:
 
-    # os.walk percorre a pasta do projeto e todas as subpastas
+    # Percorre a pasta do projeto e suas subpastas
     for pasta_atual, subpastas, arquivos in os.walk(PASTA_DO_PROJETO):
+
+        # Impede a entrada nas pastas excluídas
+        subpastas[:] = [
+            pasta for pasta in subpastas
+            if pasta not in PASTAS_FORA
+        ]
 
         for nome in arquivos:
 
-            # Caminho completo e caminho a partir da pasta do projeto
             caminho = os.path.join(pasta_atual, nome)
             relativo = os.path.relpath(caminho, PASTA_DO_PROJETO)
 
-            # Confere se o arquivo está dentro de uma pasta que fica de fora
-            dentro_de_pasta_fora = False
+            extensao = os.path.splitext(nome)[1].lower()
 
-            for parte in relativo.split(os.sep):
-                if parte in PASTAS_FORA:
-                    dentro_de_pasta_fora = True
-
-            # Pega a extensão do arquivo (.py, .db, .md...)
-            extensao = os.path.splitext(nome)[1]
-
-            if dentro_de_pasta_fora or extensao in EXTENSOES_FORA:
-
+            # Verifica se o arquivo deve ficar de fora
+            if nome in ARQUIVOS_FORA or extensao in EXTENSOES_FORA:
                 print(f"  fora      {relativo}")
                 deixados_de_fora += 1
+                continue
 
-            else:
+            # Não inclui o próprio ZIP que está sendo gerado
+            if os.path.abspath(caminho) == os.path.abspath(CAMINHO_PACOTE):
+                continue
 
-                # Dentro do .zip, tudo fica numa pasta com o nome do pacote
-                pacote.write(caminho, os.path.join(NOME_PACOTE, relativo))
+            # Adiciona o arquivo ao pacote
+            destino = os.path.join(NOME_PACOTE, relativo)
+            pacote.write(caminho, destino)
 
-                print(f"  incluído  {relativo}")
-                incluidos += 1
-
+            print(f"  incluído  {relativo}")
+            incluidos += 1
 
 print()
 print(f"Arquivos incluídos: {incluidos}")

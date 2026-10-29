@@ -1,1 +1,1 @@
-# Esse arquivo nao possui dependencias externas usa como módulo de biblioteca padrão do python
+# Esse arquivo não possui dependencias externas usa como módulo de biblioteca padrão do python
