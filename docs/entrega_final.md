@@ -11,10 +11,9 @@ Por que esse número de versão: Por causa que o 3.3.1 era o sistema inteiro fun
 | 6 | O histórico tem commits com mensagens claras | Sim |(https://github.com/Luan-Davi/TechBairro.py/commits/main/) |
 | 7 | README, manual de uso e requirements.txt estão no repositório | Sim | https://github.com/Luan-Davi/TechBairro.py
 | 8 | A Issue "Teste do README" (Aula 26) está fechada | Sim | https://github.com/Luan-Davi/TechBairro.py/issues/1
-| 9 | O vídeo está publicado e o link abre sem pedir login | ____ (link do vídeo) |
+| 9 | O vídeo está publicado e o link abre sem pedir login | Sim (https://drive.google.com/file/d/1Lj1Uy5EE-uvRJsnA12EvdDwfob5zbkAj/view?usp=sharing) |
 ## Roteiro do vídeo
-____ (a tabela da Parte 3)
+
 ## Perguntas
-____ (Parte 6)
+
 ## Autoavaliação
-____ (Parte 6)
