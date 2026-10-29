@@ -18,7 +18,7 @@ Por que esse número de versão: Por causa que o 3.3.1 era o sistema inteiro fun
 Porque o banco guarda os dados dos clientes, que podem ser pessoais, e não devem ficar públicos. Além disso, cada pessoa que instala o programa cria o seu próprio banco vazio. Por isso ele está no .gitignore.
 
 **Pergunta 2: qual caso de teste pegou um defeito de verdade? Qual era o defeito?**
-O teste do telefone com espaços (CT03, "61 9999 0000") e o do e-mail sem ponto (CT04) pegaram falhas na validação, porque o programa aceitava dados num formato que não deveria. Depois de corrigir, o sistema passou a limpar os espaços do telefone e a recusar e-mail inválido.
+Nenhum
 
 **Pergunta 3: se o voluntário tiver só o link do repositório, como ele instala e executa?**
 Ele abre o repositório, baixa o .zip da release (ou clona o projeto), extrai a pasta e instala o que está no requirements.txt. Depois abre o terminal na pasta e roda `python techbairro.py`. O passo a passo completo está no README e no manual de uso.
