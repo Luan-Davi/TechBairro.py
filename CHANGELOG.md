@@ -4,6 +4,22 @@
 ### Adicionado
 - Código publicado no GitHub, com histórico de versões.
 
+## v3.3.2 (Aula 27)
+### Adicionado
+- README com requisitos, instalação e configuração do banco.
+- Requisitos do arquivo.txt.
+- Manual de uso em docs/manual_de_uso.md.
+- Registro de testes em docs/registro_de_testes.md.
+
+## v3.3.1 (Aula 21)
+### Alterado
+- O código monolítico do techbairrofoi reorganizado em arquitetura de camadas.
+- A classe Clientefoi movida para o novo módulo cliente.py.
+- A comunicação com o banco de dados SQLite foi isolada no novo módulo banco.py.
+- As regras de negócio de validação foram centralizadas na classe ValidadorClientedentro do novo módulo validacao.py.
+### Adicionado
+- Criado o script de testes automatizados unitários testar_validacao.pypara validar as regras de negócio de forma isolada, sem interface gráfica e sem mexer no banco de dados.
+
 ## v3.3.0 ()
 ### Corrigido
 - A lista da consulta é atualizada depois de excluir um cliente.
